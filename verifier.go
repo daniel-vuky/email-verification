@@ -19,8 +19,8 @@ func NewVerifier(checkMailProvider bool) *Verifier {
 	return &Verifier{
 		CheckMailProvider: checkMailProvider,
 		ListProviderVerifier: map[string]MailProvider{
-			"gmail":   NewGmailVerifier(),
-			"outlook": NewOutlookVerifier(),
+			"gmail.com":   NewGmailVerifier(),
+			"outlook.com": NewOutlookVerifier(),
 		},
 	}
 }

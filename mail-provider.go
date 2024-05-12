@@ -8,7 +8,7 @@ type MailProvider interface {
 }
 
 func (v *Verifier) checkWithMailProvider(email, provider string) error {
-	if !v.ListProviderVerifier[provider].IsSupportedDomain(provider) {
+	if v.ListProviderVerifier[provider] == nil || !v.ListProviderVerifier[provider].IsSupportedDomain(provider) {
 		return fmt.Errorf("provider %s is not supported", provider)
 	}
 
